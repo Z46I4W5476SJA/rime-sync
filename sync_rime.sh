@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # 定义文件路径
-IPHONE_ICLOUD_SRC="/Users/chouxiang99/Library/Mobile Documents/iCloud~dev~fuxiao~app~hamsterapp/Documents/sync/iPhone/custom_dict.userdb.txt"
-IPHONE_ONEDRIVE_DEST="/Users/chouxiang99/Library/CloudStorage/OneDrive-个人/iCloud~dev~fuxiao~app~hamsterapp/sync/iPhone"
-MACBOOK_ONEDRIVE_SRC="/Users/chouxiang99/Library/CloudStorage/OneDrive-个人/iCloud~dev~fuxiao~app~hamsterapp/sync/MacBook/custom_dict.userdb.txt"
+IPHONE_ICLOUD_SRC="/Users/chouxiang99/Library/Mobile Documents/iCloud~dev~fuxiao~app~hamsterapp/Documents/sync/iPhone/rime_frost.userdb.txt"
+IPHONE_ONEDRIVE_DEST="/Users/chouxiang99/Library/CloudStorage/OneDrive-个人/Rime/Sync/iPhone"
+MACBOOK_ONEDRIVE_SRC="/Users/chouxiang99/Library/CloudStorage/OneDrive-个人/Rime/Sync/MacBookPro/rime_frost.userdb.txt"
 MACBOOK_ICLOUD_DEST="/Users/chouxiang99/Library/Mobile Documents/iCloud~dev~fuxiao~app~hamsterapp/Documents/sync/MacBook"
 
 # 检查源文件是否存在
@@ -22,7 +22,7 @@ mkdir -p "$MACBOOK_ICLOUD_DEST"
 
 # 步骤 1：将 iPhone 的 iCloud 文件拷贝到 OneDrive 并替换旧文件
 echo "正在将 iPhone 的 iCloud 文件同步到 OneDrive..."
-cp -f "$IPHONE_ICLOUD_SRC" "$IPHONE_ONEDRIVE_DEST/custom_dict.userdb.txt"
+cp -f "$IPHONE_ICLOUD_SRC" "$IPHONE_ONEDRIVE_DEST/rime_frost.userdb.txt"
 if [ $? -eq 0 ]; then
     echo "步骤 1 完成：iPhone 文件已替换到 OneDrive。"
 else
@@ -44,7 +44,7 @@ echo "步骤 2 完成：Rime 同步成功."
 
 # 步骤 3：将 MacBook 的 OneDrive 文件拷贝到 iCloud 并替换旧文件
 echo "正在将 MacBook 的 OneDrive 文件同步到 iCloud..."
-cp -f "$MACBOOK_ONEDRIVE_SRC" "$MACBOOK_ICLOUD_DEST/custom_dict.userdb.txt"
+cp -f "$MACBOOK_ONEDRIVE_SRC" "$MACBOOK_ICLOUD_DEST/rime_frost.userdb.txt"
 if [ $? -eq 0 ]; then
     echo "步骤 3 完成：MacBook 文件已替换到 iCloud。"
 else
